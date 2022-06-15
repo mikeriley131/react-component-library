@@ -1,0 +1,64 @@
+.accordion__item h2 {
+  margin-bottom: 0;
+}
+
+.accordion__button {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.accordion__content {
+  max-height: 0;
+  opacity: 0;
+}
+.accordion__content.is-open {
+  animation: fadeInAndGrow 1.5s ease-out forwards;
+}
+.accordion__content.is-closing {
+  animation: fadeOutAndShrink 1.5s ease-out forwards;
+}
+
+@keyframes fadeInAndGrow {
+  0% {
+    display: none;
+    max-height: 0;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+  }
+  33% {
+    opacity: 0;
+  }
+  75% {
+    max-height: 15rem;
+    opacity: 1;
+  }
+  100% {
+    display: block;
+    max-height: 15rem;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutAndShrink {
+  0% {
+    display: block;
+    max-height: 15rem;
+    opacity: 1;
+  }
+  33% {
+    max-height: 15rem;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+    max-height: 0;
+    opacity: 0;
+  }
+}
